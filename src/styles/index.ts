@@ -8,7 +8,8 @@ export const Main = styled.main`
     }
 
     .offset{
-
+        width: 100%;
+        height: 100%;
     }
 
     .a{

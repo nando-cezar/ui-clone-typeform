@@ -58,6 +58,11 @@ const First: React.FC = () => {
     ['58vh', '0vh']
   );
 
+  const offsetY = useTransform(scrollYProgress,
+      [0.328, 0.397, 0.461, 0.53],
+      ['0%', '-100%', '-100%', '-200%']
+    );
+
   return (
     <Sticky 
       className="first"
@@ -66,6 +71,9 @@ const First: React.FC = () => {
         borderRadius:firstRadius
       }}
     >
+    <motion.div className="offset" style={{
+      y: offsetY
+    }}>
       <div className="a">
         <motion.div
           className="left-side"
@@ -85,6 +93,7 @@ const First: React.FC = () => {
       </div>
       <div className="b"></div>
       <div className="c"></div>
+    </motion.div>
     </Sticky>
   );
 }
